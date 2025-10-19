@@ -22,7 +22,7 @@
  * Example Usage:
  * stopRecurringTimer(timerId); // Stops the recurring timer started with the given ID.
  */
-function recurringTimer(message, interval) {
+/*function recurringTimer(message, interval) {
   // Set up a timer using setInterval to log the message
   // Return the timer ID
 }
@@ -30,5 +30,27 @@ function recurringTimer(message, interval) {
 function stopRecurringTimer(timerId) {
   // Stop the timer using clearInterval
 }
+*/
+
+function recurringTimer(message, interval) {
+    // Set up a timer using setInterval to log the message at specified intervals
+    const timerId = setInterval(() => {
+        console.log(message);
+    }, interval);
+
+    // Return the timer ID
+    return timerId;
+}
+const timerId = recurringTimer("Hello, world!", 2000); // Logs "Hello, world!" every 2 seconds.
+// Later, you can stop it using:
+
+function stopRecurringTimer(timerId) {
+    // Stop the timer using clearInterval
+    clearInterval(timerId);
+}
+
+
+
+stopRecurringTimer(timerId); // Stops the recurring timer.
 
 module.exports = { recurringTimer, stopRecurringTimer };
